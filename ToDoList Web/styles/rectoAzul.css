@@ -1,0 +1,355 @@
+:root {
+    --barraSuperior: #3392ff;
+    --contenedores: #f0f6ff;
+    --botones: #90caf9;
+    --botonesHover: #64b5f6;
+    --botonesAction: #42a5f5;
+    --fondo: #eaf4fb;
+    --textoBarraSuperior: #0d47a1;
+    --textoTitulo: #1565c0;
+    --texto: #0d47a1;
+    --textoBotones: #0d47a1;
+}
+
+/* Fuente global */
+body, input, textarea, button, select, h1, h2, h3, h4, h5, h6, p, label, div, span, ul, li {
+    font-family: Arial, sans-serif !important;
+}
+
+body {    
+    background-color: var(--fondo);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 600px;
+    min-width: 1150px;
+    color: var(--texto);
+}
+/* Estilo barra Superior */
+.barraSuperior {
+    background-color: var(--barraSuperior);
+    color: var(--textoBarraSuperior);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 10vh;
+    min-height: 50px;
+    border-bottom: 1px solid #bbdefb;
+}
+.barraSuperior #fechaHora {
+    font-size: 1.2em;
+    color: var(--textoBarraSuperior);
+}
+.barraSuperior button {
+    background-color: #008cff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+/* Estilo Contenido */
+.contenido {
+    display: grid;
+    grid-template-columns: 15% 60% 25%;
+    gap: 0;
+    background-color: var(--fondo);
+    padding: 0;
+    height: 90vh; 
+    min-height: 500px;
+}
+/* Estilo barra Tareas */
+.barraTareas{
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 1fr;
+    background-color: var(--contenedores);
+    color: var(--textoTitulo);
+    text-align: center;
+    overflow: hidden;        
+    border-bottom: 1px solid #bbdefb;
+}
+
+.barraTareas h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.contenedorListaTareas {
+    display: flex;    
+    flex-direction: column;
+    background-color: var(--fondo);
+    color: var(--texto);
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.contenedorListaTareas ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: var(--contenedores);
+}
+
+.contenedorListaTareas li{
+    display: flex;
+    flex-direction: column;
+    background-color: #e3f2fd;
+    color: var(--texto);   
+    border: 1px solid #90caf9;
+    padding: 10px;
+    transition: background-color 0.3s;
+    font-size: larger;
+}
+
+.contenedorListaTareas li:hover {
+    background-color: #bbdefb;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.contenedorListaTareas li:active {
+    background-color: #90caf9;
+    transition: background-color 0s ease;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.contenedorListaTareas li.tarea-seleccionada {
+    background-color: #64b5f6 !important;
+    border: 2px solid #1976d2;
+    color: #0d47a1;
+}
+
+.botonesBarraTarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botonesBarraTarea button{    
+    width: 100%;
+    height: 100%;
+}
+.tareas{
+    background-color: var(--contenedores);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 74% 7% 7%;
+    flex-direction: column;
+    gap: 2%;
+    padding: 1.5%;
+    border: 1px solid #bbdefb;
+}
+.tituloTarea{
+    display: flex;
+    background-color: #e3f2fd;
+    color: var(--texto);
+    width: 100%;      
+    overflow: hidden;
+    border: 1px solid #90caf9;
+}
+.tituloTarea input {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif !important;
+    font-size: large;
+    background-color: #ffffff;
+    color: var(--texto);
+    border: none;
+}
+.textoTarea{
+    display: flex;
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    color: var(--texto);
+    width: 100%;
+    overflow: hidden;
+}
+.textoTarea textarea {
+    margin: 0;
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    font-family: Arial, sans-serif !important;
+    font-size: large;
+    background-color: #ffffff;
+    color: var(--texto);
+    border: none;
+}
+.contenedorFechaTarea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--texto);
+    width: 100%;
+    border: 1px solid #90caf9;
+}
+
+.fechaTarea{
+    display: flex;
+    flex-direction: row;
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    color: var(--texto);
+    width: 100%;
+    padding: 5px;
+}
+
+.fechaTarea label{
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    color: var(--texto);
+}
+
+.botonesTarea{
+    display: flex;
+    justify-content: space-evenly;
+}
+.botonesTarea button{
+    width: 100%;
+}
+/* Estilo barra Recordatorios */
+.barraRecordatorios{
+    display: grid;
+    grid-template-rows: 10% 90%;
+    background-color: var(--contenedores);
+    color: var(--textoTitulo);
+    text-align: center;
+    border: 1px solid #bbdefb;
+    overflow: hidden; 
+}
+.barraRecordatorios h2{
+    margin: 0;
+    padding: 10px;
+}
+.contenedorRecordatorios {
+    display: flex;    
+    flex-direction: column;
+    background-color: var(--fondo);
+    color: var(--texto);
+    justify-content: left;
+    align-items: flex-start;
+    box-shadow: 0 0 10px rgba(33,150,243,0.08);
+    height: 98%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.contenedorRecordatorios ul{
+    display: flex;
+    flex-direction: column;    
+    gap: 5px;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    margin: 0%;
+    padding: 0%;
+}
+.divRecordatorio {
+    display: flex;
+    flex-direction: column;
+    background-color: #e3f2fd;
+    color: var(--texto);
+    border: 1px solid #90caf9;
+    width: 100% ;
+}
+
+.divRecordatorio h3{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    
+}
+.divRecordatorio p{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: large;
+}
+.divRecordatorio button{
+    background-color: var(--botones);
+    color: var(--textoBotones);
+    border: none;
+    cursor: pointer;
+
+}
+
+.divRecordatorio.recordatorio-expirado {
+    background-color: #bbdefb !important; /* azul claro para expirado */
+    color: #0d47a1 !important;
+}
+
+/*Estilo general de los botones*/
+button{
+    background-color: var(--botones); 
+    border: none;
+    color: var(--textoBotones);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid var(--contenedores);
+}
+button:hover {
+    background-color: var(--botonesHover);
+}
+button:active {
+    background-color: var(--botonesAction);
+    transform: translateY(4px);
+}
+
+/* Estilo del Menu de Ajustes*/
+.menuAjustes {
+    display: none;
+    position: absolute;
+    background: #e3f2fd;
+    padding: 10px;
+    border: 1px solid #90caf9;
+    color: var(--texto);
+}
+
+.menuAjustes.mostrar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menuAjustes p {
+    background-color: #bbdefb;
+    box-shadow: 0 0 10px rgba(33,150,243,0.08);
+    margin: 5px;
+    padding: 10px;
+    color: var(--texto);
+} 
+
+#cerrarSesionBtn {
+    background-color: #64b5f6;
+    color: #0d47a1;
+}
+
+/* Cambia el color de fondo y texto de todos los inputs */
+input[type="date"],
+input[type="text"] {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border: 1px solid #90caf9;
+    font-family: Arial, sans-serif;
+}

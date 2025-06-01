@@ -1,0 +1,337 @@
+:root {
+    --barraSuperior: #3539ff; 
+    --contenedores: #2196f3; 
+    --botones: #2600ff; 
+    --botonesHover: #3c69ff; 
+    --botonesAction: #0003a1; 
+    --fondo: whitesmoke; 
+    --textoBarraSuperior: white;
+    --textoTitulo: white;
+    --texto: black;
+    --textoBotones: white;
+}
+
+
+body{    
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 600px;
+    min-width: 1150px;
+}
+/* Estilo barra Superior */
+.barraSuperior {
+    background-color: var(--barraSuperior);
+    color: var(--textoBarraSuperior);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 10vh;
+    min-height: 50px;
+}
+/* Estilo Contenido */
+.contenido {
+    display: grid;
+    grid-template-columns: 19% 56% 23%;
+    gap: 1%;
+    background-color: var(--fondo);
+    padding: 10px;
+    height: calc(90vh - 20px); 
+    min-height: 500px;
+}
+/* Estilo barra Tareas */
+.barraTareas{
+    display: grid;
+    grid-template-rows: 8% 82% 8%;
+    grid-template-columns: 1fr;
+    gap: 2%;
+    background-color: var(--contenedores);
+    color: var(--textoTitulo);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.barraTareas h2{
+    margin: 0;
+    padding: 10px;
+}
+
+.contenedorListaTareas {
+    display: flex;    
+    flex-direction: column;
+    background-color: var(--fondo);
+    color: var(--texto);
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.contenedorListaTareas ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    height: 99%;
+    text-align: left;
+}
+
+.contenedorListaTareas li{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: var(--texto);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 1%;
+    padding: 10px;
+}
+
+.contenedorListaTareas li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.contenedorListaTareas li:active {
+    background-color: darkgray;
+    transition: background-color 0s ease;
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.contenedorListaTareas li.tarea-seleccionada {
+    background-color: #b3d1ff !important;
+    border: 2px solid #2600ff;
+}
+
+.botonesBarraTarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+/* Estilo Tareas */
+.tareas{
+    background-color: var(--contenedores);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 74% 7% 7%;
+    flex-direction: column;
+    gap: 2%;
+    padding: 1.5%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.tituloTarea{
+    display: flex;
+    background-color: var(--fondo);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: var(--texto);
+    width: 100%;      
+    overflow: hidden;
+}
+.tituloTarea input {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif !important;
+    font-size: larger;
+}
+.textoTarea{
+    display: flex;
+    background-color: var(--fondo);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: var(--texto);
+    width: 100%;
+    overflow: hidden;
+}
+.textoTarea textarea {
+    margin: 0;
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    font-family: Arial, sans-serif !important;
+    font-size: larger;
+    border-radius: 10px;
+}
+.contenedorFechaTarea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--texto);
+    width: 100%;
+}
+.fechaTarea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--fondo);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    color: var(--texto);
+    width: 100%;
+    height: 100%;
+    margin: 1%;
+}
+.fechaTarea label{
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+}
+.fechaTarea input {
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    font-size: larger;
+    background-color: var(--fondo);
+    color: var(--texto);
+    border: none;
+}
+.botonesTarea{
+    display: flex;
+    justify-content: space-evenly;
+}
+.botonesTarea button{
+    width: 100%;
+}
+/* Estilo barra Recordatorios */
+.barraRecordatorios{
+    display: grid;
+    grid-template-rows: 8% 92%;
+    gap: 2%;
+    background-color: var(--contenedores);
+    color: var(--textoTitulo);
+    padding: 2%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; 
+}
+.barraRecordatorios h2{
+    margin: 0;
+    padding: 10px;
+}
+.contenedorRecordatorios {
+    display: flex;    
+    flex-direction: column;
+    background-color: var(--fondo);
+    color: var(--texto);
+    justify-content: left;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 98%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.contenedorRecordatorios ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
+    margin: 0%;
+    padding: 0%;
+}
+.divRecordatorio {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: var(--texto);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    width: calc(100% - 10px);
+}
+
+.divRecordatorio h3{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
+.divRecordatorio p{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
+.divRecordatorio button{
+    margin: 10px;
+    background-color: var(--botones);
+    color: var(--textoBotones);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.divRecordatorio.recordatorio-expirado {
+    background-color: red !important; /* lightred */
+}
+
+/*Estilo general de los botones*/
+button{
+    background-color: var(--botones); 
+    border: none;
+    color: var(--textoBotones);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+button:hover {
+    background-color: var(--botonesHover);
+}
+button:active {
+    background-color: var(--botonesAction);
+    transform: translateY(4px);
+}
+
+/* Estilo del Menu de Ajustes*/
+.menuAjustes {
+    display: none;
+    position: absolute;
+    background: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: black
+}
+
+.menuAjustes.mostrar {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.menuAjustes p {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+} 
+
+#cerrarSesionBtn {
+    background-color: red;
+    color: white;
+}
